@@ -1,0 +1,71 @@
+.home-banner
+	background: #c39c7f
+	transition: 0.5s margin
+	&--hide
+		@media screen and ( min-width: 700px )
+			margin-bottom: rem(-500)
+		@media screen and ( max-width: 699px )
+			margin-bottom: rem(-500)
+	&__item
+		position: relative
+		display: flex!important
+		z-index: 1
+		@media screen and ( min-width: 700px )
+			height: rem(700)
+		@media screen and ( max-width: 699px )
+			height: 100vh
+			min-height: rem(480)
+			max-height: rem(800)
+	&__img
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		object-fit: cover
+		z-index: -1
+	&__inner
+		display: grid
+		height: 100%
+		width: 100%
+		@media screen and ( min-width: 700px )
+			grid-template-columns: 1fr 1fr
+			grid-template-rows: 1fr 1fr
+			padding-bottom: rem(40)
+		@media screen and ( max-width: 699px )
+			grid-template-columns: 100%
+			grid-template-rows: 1fr 1fr
+			padding-bottom: rem(40)
+	.container
+		width: 100%
+	&__text
+		@media screen and ( min-width: 700px )
+			grid-column: 2/3
+			grid-row: 2/3
+			font-size: rem(36)
+			&--top-right
+				grid-column: 2/3
+				grid-row: 1/2
+			&--top-left
+				grid-column: 1/2
+				grid-row: 1/2
+			&--bottom-left
+				grid-column: 1/2
+		@media screen and ( max-width: 699px )
+			display: flex
+			flex-direction: column
+			justify-content: flex-end
+			grid-row: 2/3
+			font-size: rem(24)
+			&--top-right
+				justify-content: flex-start	
+				grid-row: 1/2
+			&--top-left
+				justify-content: flex-start	
+				grid-row: 1/2
+			&--bottom-left
+				grid-row: 2/3
+	
+
+			
+			

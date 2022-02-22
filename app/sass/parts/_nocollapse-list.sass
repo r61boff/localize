@@ -1,0 +1,35 @@
+.nocollapse-list
+    &__inner
+        display: grid
+        grid-gap: rem(24)
+        margin-bottom: rem(24)
+        @media screen and ( min-width: 1024px )
+            grid-template-columns: repeat(4, 1fr)            
+        @media screen and ( min-width: 700px ) and (max-width: 1023px)
+            grid-template-columns: repeat(3, 1fr)            
+        @media screen and (max-width: 699px)
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: rem(16)
+    &__item
+        display: flex
+        flex-direction: column
+        align-items: center
+        border: rem(1) solid #e0e0e0
+        padding: rem(16)
+        text-align: center
+        text-decoration: none
+        transition: 0.4s border
+        &:hover, &:focus-visible
+            border-color: var(--main-accent)
+        &-img
+            margin-bottom: rem(12)
+            width: auto
+            object-fit: contain
+            @media screen and ( min-width: 700px )
+                height: rem(140)
+            @media screen and ( max-width: 699px )
+                height: rem(120)
+                
+
+
+        

@@ -1,0 +1,21 @@
+.form-grid
+	display: grid
+	gap: calc( var(--gap) )
+	&--col2
+		@media screen and ( min-width: 700px )
+			grid-template-columns: repeat(2, 1fr)
+	&--col3
+		@media screen and ( min-width: 700px )
+			grid-template-columns: repeat(3, 1fr)
+	&--col4
+		@media screen and ( min-width: 1024px )
+			grid-template-columns: repeat(4, 1fr)
+		@media screen and ( min-width: 600px ) and (max-width: 1023px)
+			grid-template-columns: repeat(2, 1fr)
+	&__full
+		grid-column: 1/-1
+	&__btn-wrap
+		justify-self: end
+		align-self: end
+	input, textarea
+		margin-bottom: 0

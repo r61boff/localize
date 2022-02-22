@@ -1,0 +1,76 @@
+footer
+.site-footer
+	background-color: #f5f5f5
+	&__inner
+		display: grid
+		justify-content: center
+		padding: rem(16) 0
+	&__link
+		display: flex
+		justify-content: center
+		@media screen and ( max-width: 699px )
+			flex-direction: column
+			text-align: center
+		&-text
+			@media screen and ( min-width: 700px )
+				flex: 0 0 rem(300)
+				text-align: right
+		&-list
+			display: flex
+			flex-direction: column
+			@media screen and ( min-width: 700px )
+				flex: 0 0 rem(276)
+				margin-left: rem(24)
+				text-align: left
+			a
+				margin-bottom: rem(20)
+	&__copy
+		text-align: center			
+	
+		
+.footer-social
+	&__inner
+		padding: rem(16) 0 0
+		text-align: center
+		font-size: 0
+	&__item
+		display: inline-flex
+		align-items: center
+
+		margin: 0 rem(12) rem(16)
+		width: rem(32)
+		height: rem(32)
+		path
+			transition: 0.4s fill
+		&:hover
+			path
+				fill: #333
+
+
+/*DEV*/
+.dev
+	display: grid
+	grid-template-columns: rem(32) 1fr
+	grid-template-rows: auto
+	grid-template-areas: "logo name"
+	column-gap: rem(4)
+	align-items: center
+	color: var(--body-color)
+	text-decoration: none
+	transition: 0.2s color
+	font-weight: 300
+	&__logo
+		grid-area: logo
+		display: block
+	&__name
+		grid-area: name
+		display: block
+		font-size: rem(12)
+		line-height: calc(15 / 12)
+	&:hover
+		color: #cbcfd2
+@media (max-width: 649px)
+	.dev
+		&__name
+			font-size: rem(10)
+

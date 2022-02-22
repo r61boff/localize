@@ -1,0 +1,30 @@
+// User variables:
+\:root
+	--container-width: 71.5625rem
+	--container-wide: 106.25rem
+	--gap: 2rem
+	--main-accent: #14518a
+	--main-yellow: #FFEFCE
+	--body-color: var(--main-accent)
+	--text-white: #FAF8F4
+	--main-bg: #ffffff
+	--gradient-main: linear-gradient(180deg, #20BAB6 0%, #7964AA 100%)
+	--gradient-white: linear-gradient(180deg, #ffffff 0%, #ffffff 100%)
+	--font-heading: 'Forum', Arial, sans-serif
+	//dots
+	
+	//icons
+	--shevron-menu-right: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512'%3e%3cpath fill='%2314518a' d='m17.5 36.5-7 7a12 12 0 0 0 0 17L205.9 256 10.5 451.5a12 12 0 0 0 0 17l7 7a12 12 0 0 0 17 0l211-211a12 12 0 0 0 0-17l-211-211a12 12 0 0 0-17 0z'/%3e%3c/svg%3e")
+@media screen and (min-width: 1024px) and ( max-width: 1370px )
+	\:root
+		--gap: 2.25rem
+@media screen and (min-width: 700px) and ( max-width: 1023px )
+	\:root
+		--gap: 1.5rem			
+@media screen and ( max-width: 719px )
+	\:root
+		--gap: 1.25rem
+
+$browser-context: 16
+@function rem($pixels, $context: $browser-context) 
+	@return #{$pixels/$context}rem

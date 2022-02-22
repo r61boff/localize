@@ -1,0 +1,382 @@
+body
+	margin: 0
+	padding: 0
+	background-color: var(--main-bg)
+	font-size: rem(13)
+	line-height: 1.2
+	font-family: 'Noto Sans', Roboto, sans-serif
+	color: var(--body-color)
+	min-height: 100vh
+	display: grid
+	grid-template-rows: auto 1fr auto
+header
+	align-self: start
+footer
+	align-self: end
+main
+	width: 100%
+	overflow: hidden
+	//position: relative
+	//z-index: 1
+.main-accent
+	background: var(--main-accent)
+	color: var(--text-white)
+	.lined-heading
+		&::first-line
+			background-color: var(--main-accent)
+		&::before, &::after
+			background-color: currentColor
+h1, .h1, h2, .h2
+	font-family: 'Forum', Arial, serif
+	font-weight: 400
+	line-height: 1
+	
+h1, .h1
+	line-height: 1.2
+	text-transform: uppercase
+	@media screen and ( min-width: 1300px )
+		font-size: rem(50)
+	@media screen and (min-width: 800px) and ( max-width: 1299px )
+		font-size: rem(40)
+	@media screen and ( max-width: 799px )
+		font-size: rem(30)
+		
+h2, .h2
+	line-height: 1.2
+	text-transform: uppercase
+	@media screen and ( min-width: 800px )
+		margin-top: rem(24) 
+		margin-bottom: rem(12) 
+		font-size: rem(40)
+	@media screen and ( max-width: 799px )
+		margin-top: rem(24) 
+		margin-bottom: rem(12) 
+		font-size: rem(24)
+		
+h3, .h3
+	line-height: 1.2
+	font-weight: 300
+	@media screen and ( min-width: 800px )
+		margin-top: rem(16) 
+		margin-bottom: rem(12) 
+		font-size: rem(24)
+	@media screen and ( max-width: 799px )
+		margin-top: rem(16) 
+		margin-bottom: rem(12) 
+		font-size: rem(22)
+		
+h4, .h4
+	line-height: 1.2
+	@media screen and ( min-width: 800px )
+		font-size: rem(20)
+	@media screen and ( max-width: 799px )
+		font-size: rem(18)
+	
+p, ul, ol, blockquote
+	margin: 0 0 1.25rem
+	//letter-spacing: 0.65px
+	&:last-child
+		margin-bottom: 0
+section, h2
+	scroll-margin-top: rem(127)
+	@media screen and ( max-width: 1023px )
+		scroll-margin-top: rem(51)
+		
+.text-accent
+	color: var(--main-accent)
+.text-center
+	text-align: center
+.lined-heading
+	position: relative
+	line-height: 1.1
+	z-index: 1
+	&::first-line
+		background-color: #ffffff
+		padding-right: 10rem
+	&::before, &::after
+		content: ""
+		position: absolute
+		background-color: var(--main-accent)
+		width: 100vw
+		height: rem(1)
+		z-index: -1
+	&::before
+		@media screen and ( min-width: 1024px )
+			top: rem(29)
+			left: rem(10)
+		@media screen and ( max-width: 1023px )
+			top: rem(15)
+			left: rem(10)
+	&::after
+		@media screen and ( min-width: 1024px )
+			top: calc(100% + 1.675rem)
+			left: 50%
+			transform: translateX(-50%)
+		@media screen and ( max-width: 1023px )
+			top: calc(100% + 1rem)
+			left: 50%
+			transform: translateX(-50%)
+		
+	&--center
+		text-align: center
+		width: min-content
+		margin: 0 auto
+		&::first-line
+			background-color: transparent!important
+		&::before
+			@media screen and ( min-width: 1024px )
+				left: calc(50% + 15rem)
+			@media screen and ( max-width: 1023px )
+				left: calc(50% + 10rem)
+		&::after
+			@media screen and ( min-width: 1024px )
+				left: auto
+				right: calc(50% + 15rem)
+				transform: none
+
+
+// ol
+// 	counter-reset: myCounter
+// 	li
+// 		list-style: none
+// 	&>li::before 
+// 		counter-increment: myCounter
+// 		content: counter(myCounter)'.'
+// 		position: absolute
+// 		left: 0
+// 		font-family: Raleway, sans-serif
+// 		font-size: 110%
+// 		color: var(--add-blue)
+
+.icon-list
+	li
+		display: flex
+		align-items: center
+		column-gap: rem(24)
+		margin: 0 0 rem(40) 0
+		letter-spacing: -0.025em
+		&::before
+			content: ""
+			align-self: flex-start
+			background-repeat: no-repeat
+			background-size: contain
+			background-position: center
+			flex: 0 0 rem(56)
+			aspect-ratio: 1/1
+		&:nth-child(6n + 1)::before
+			background-image: var(--icon-list1)
+		&:nth-child(6n + 2)::before
+			background-image: var(--icon-list2)
+		&:nth-child(6n + 3)::before
+			background-image: var(--icon-list3)
+		&:nth-child(6n + 4)::before
+			background-image: var(--icon-list2)
+		&:nth-child(6n + 5)::before
+			background-image: var(--icon-list1)
+		&:nth-child(6n + 6)::before
+			background-image: var(--icon-list3)
+	
+
+a
+	transition: 0.2s color
+	color: inherit
+	&:hover
+		text-decoration: none
+button:focus
+	outline: none
+[data-src]
+	cursor: pointer
+
+
+
+
+
+.overlay
+	position: absolute
+	&::after
+		content: ""
+		position: fixed
+		top: 0
+		bottom: 0 
+		left: 0
+		right: 0
+		z-index: -1
+		background: rgba(13, 18, 24, 0.1)
+		backdrop-filter: blur(10px)
+		z-index: 3
+		transition: 0.4s transform
+	&--none
+		&::after
+			transform: translateX(-100%)
+.stopscroll
+	//height: 100vh
+	overflow-y: hidden
+	// position: fixed
+	// overflow-y: scroll
+	// width: 100vw
+	@media screen and ( pointer: fine )
+		padding-right: rem(17)
+		
+
+
+.locked
+	position: relative
+	display: block
+	&::before
+		content: ""
+		display: block
+		padding-top: 50%
+	&__img
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		object-fit: cover
+
+.menu-toggle //oxford
+	position: relative
+	display: flex
+	align-items: center
+	justify-content: center
+	padding: 0
+	border: none
+	width: rem(40)
+	//height: rem(44)
+	max-width: 100%
+	border-radius: rem(4)
+	background-color: transparent
+	align-self: center
+	cursor: pointer
+	z-index: 1100
+	&::before
+		content: ""
+		display: block
+		padding-top: 100%
+	&__line
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		display: block
+		width: 100%
+		height: rem(3)
+		background-color: var(--add-blue)
+
+		&::before, &::after
+			content: ""
+			display: block
+			position: absolute
+			height: 100%
+			right: 0
+			width: 100%	
+			transition: 0.2s all
+		&::before
+			top: calc(100% + 0.3125rem)
+			background-color: var(--add-blue)
+		&::after
+			bottom: calc(100% + 0.3125rem)
+			background-color: var(--add-blue)
+	&--open
+	&--open	&__line
+		background-color: transparent
+		&::before
+			top: 0
+			transform: rotate(45deg)
+		&::after
+			width: 100%
+			bottom: 0
+			transform: rotate(-45deg)
+
+
+
+.hidden
+	position: absolute
+	width: 1px
+	height: 1px
+	left: -9999px
+	overflow: hidden
+
+.popup-video
+	position: relative
+	display: block
+	img
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		width: 100%
+		height: 100%
+		object-fit: cover
+		z-index: 1
+	&::after, &::before
+		content: ""
+		background-size: rem(87) rem(87)
+		background-position: center
+		background-repeat: no-repeat
+		transition: 0.2s opacity, 0.2s background
+	&::before
+		position: relative
+		display: block
+		padding-top: 60.8%
+		background-image: var(--play-hover)
+		z-index: 2
+	&::after
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background-image: var(--play)
+		z-index: 3
+	&:hover
+		&:after
+			opacity: 0
+@media (max-width: 649px)
+	.popup-video
+		&::after, &::before
+			background-size: rem(43) rem(43)
+.pswp
+	iframe
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		max-width: 100%
+		max-height: 100vh
+
+.socials
+	display: flex
+	margin: 0 rem(-11)
+	&__item
+		position: relative
+		margin: 0 rem(11)
+		flex: 0 0 rem(50)
+		height: rem(50)
+		overflow: hidden
+		path
+			transition: 0.2s fill
+		linearGradient stop
+			transition: 0.2s all
+		&:not(:hover)
+			linearGradient stop
+				stop-color: #ffffff
+
+.gray
+	position: relative
+	z-index: 1
+	&::before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		background-color: #F9F9F9
+		border-radius: rem(10)
+		z-index: -1
+		@media screen and ( min-width: 1485px )
+			left: -2.7125rem
+			right: -2.7125rem
+			

@@ -1,0 +1,72 @@
+@@include(
+'./_header.html',
+{
+title: "Результаты поиска",
+headerClass: "site-header--black site-header--sticky" ,
+mainClass: ""
+}
+)
+
+<div class="heading">
+	<div class="container">
+		<div class="heading__inner">
+            <h1><small>Результаты поиска: <i>поисковая фраза</i></small></h1>
+			<div class="heading__breadcrumbs">
+				<ul class="breadcrumb">
+					<li><span><span><a href="main.html">Главная</a> </span></span></li>
+					<li> <span class="breadcrumb_last" aria-current="page">Поиск</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<section class="search-result">
+    <div class="container">
+        <form action="" class="search-result__form">
+            <input type="search" value="поисковая фраза" class="search-result__searchinput">
+            <button type="submit" class="search-result__submit">Искать</button>
+        </form>
+        <div class="search-result__text">По запросу "поисковая фраза" найдено 5 страниц</div>
+    </div>
+</section>
+
+<section class="nocollapse-list">
+    <div class="container">
+        <div class="nocollapse-list__inner">
+            <a href="product.html" class="nocollapse-list__item">
+                <img src="images/home-prod1.jpg" alt="" class="nocollapse-list__item-img">
+                <span class="nocollapse-list__item-name">Продукт 1</span>
+            </a>
+            <a href="product.html" class="nocollapse-list__item">
+                <img src="images/home-prod2.jpg" alt="" class="nocollapse-list__item-img">
+                <span class="nocollapse-list__item-name">Продукт 2</span>
+            </a>
+            <a href="product.html" class="nocollapse-list__item">
+                <img src="images/home-prod3.jpg" alt="" class="nocollapse-list__item-img">
+                <span class="nocollapse-list__item-name">Продукт 3</span>
+            </a>
+            <a href="product.html" class="nocollapse-list__item">
+                <img src="images/home-prod4.jpg" alt="" class="nocollapse-list__item-img">
+                <span class="nocollapse-list__item-name">Продукт 4 с дилнным названием очень</span>
+            </a>
+            <a href="product.html" class="nocollapse-list__item">
+                <img src="images/home-prod5.jpg" alt="" class="nocollapse-list__item-img">
+                <span class="nocollapse-list__item-name">Продукт 5 покороче</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="pagination">
+    <div class="container">
+        <div class="pagination__list">
+            <a class="pagination__item pagination__item--current">1</a>
+            <a href="#" class="pagination__item">2</a>
+            <a href="#" class="pagination__item">3</a>
+        </div>
+    </div>
+</section>
+
+
+
+@@include('./_footer.html')

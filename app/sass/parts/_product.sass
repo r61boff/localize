@@ -1,0 +1,66 @@
+.product
+	&__inner
+		display: grid
+		grid-auto-flow: dense
+		grid-template-rows: auto 1fr
+		@media screen and ( min-width: 1300px )
+			grid-template-columns: rem(400) 1fr
+			gap: rem(32)
+		@media screen and ( min-width: 1024px ) and (max-width: 1299px)
+			grid-template-columns: rem(350) 1fr
+			gap: rem(24)
+		@media screen and ( min-width: 700px ) and (max-width: 1023px)
+			grid-template-columns: 40% 1fr
+			gap: rem(24)
+		@media screen and (max-width: 699px)
+			grid-template-columns: 100%
+			gap: rem(24)
+			margin-bottom: rem(32)
+	&__title
+		@media screen and ( min-width: 700px )
+			grid-column: 2/3
+	&__descr
+		@media screen and ( min-width: 700px )
+			grid-column: 2/3
+	&__gallery	
+		@media screen and ( min-width: 700px )
+			grid-column: 1/2
+			grid-row: 1/3
+	&__content
+		@media screen and ( min-width: 700px )
+			grid-column: 1/-1
+		@media screen and (max-width: 699px)
+			grid-row: -1/-2
+	.slick-arrow
+		background-color: rgba(255,255,255,0.5)
+		transition: 0.4s background
+		&:hover
+			background-color: rgba(255,255,255,0.9)
+		@media screen and (max-width: 699px)
+			bottom: rem(48)
+			top: auto
+	ul
+		padding-left: rem(24)
+
+
+.gallery-main
+	margin-bottom: rem(24)
+	&__item
+		position: relative
+		display: block!important
+		&::before
+			content: ""
+			display: block
+			padding-top: 120%
+	&__img
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		width: 100%
+		height: 100%
+		object-fit: cover
+.gallery-nav
+	.slick-slide
+		padding: 0 0.5rem

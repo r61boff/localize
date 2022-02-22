@@ -1,0 +1,42 @@
+.btn
+	position: relative
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	border: rem(1) solid transparent
+	border-radius: rem(2)
+	box-shadow: none
+	padding: rem(4) rem(10)
+	min-height: rem(40)
+	min-width: rem(200)
+	max-width: 100%
+	font-family: inherit
+	line-height: 1.2
+	text-align: center
+	color: var(--text-white)
+	z-index: 1
+	cursor: pointer
+	overflow: hidden
+	background-color: var(--main-accent)
+	text-decoration: none
+	&:hover
+		color: var(--main-yellow)
+		
+	&--transparent
+		background-color: transparent
+		border-color: var(--text-main)
+		
+		&:hover
+			border-color: var(--main-yellow)
+			color: var(--main-yellow)
+	&--white
+		background-color: var(--text-white)
+		color: var(--main-accent)
+		&:hover
+			color: var(--main-accent)
+			background-color: var(--main-yellow)
+					
+				
+.btn-wrap
+	&--center
+		text-align: center

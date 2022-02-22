@@ -1,0 +1,25 @@
+.search-result
+    &__form
+        display: flex
+        width: 100%
+    &__searchinput
+        flex: 1
+        display: flex
+        align-items: center
+        border: rem(1) solid #626365
+        border-right: none
+        padding: rem(8) rem(10)
+    &__submit
+        flex: 0 0 rem(100)
+        border: rem(1) solid #626365
+        background-color: #626365
+        padding: rem(8) rem(10)
+        text-align: center
+        color: #ffffff
+        transition: 0.4s background
+        cursor: pointer
+        &:hover
+            background-color: var(--main-accent)
+    &__text
+        margin: rem(16) 0 rem(24)
+        text-align: center

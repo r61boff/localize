@@ -1,0 +1,221 @@
+input
+	&[type=text], &[type=email], &[type=tel], &[type=number], &[type=password]
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		border: none
+		border-bottom: rem(2) solid currentColor
+		background-color: transparent
+		width: 100%
+		color: inherit
+		text-align: left
+		font-size: rem(20)
+		line-height: 1.1
+		&:focus
+			outline: none
+		@media screen and ( min-width: 800px )
+			margin: rem(12) 0 rem(24)
+			padding: rem(8) rem(0)
+		@media screen and ( max-width: 799px )
+			margin: rem(12) 0 rem(18)
+			padding: rem(8) rem(0)
+			
+textarea
+	display: block
+	border: none
+	border-bottom: rem(2) solid currentColor
+	width: 100%
+	color: inherit
+	text-align: left
+	&:focus
+		outline: none
+	@media screen and ( min-width: 800px )
+		margin: rem(12) 0 rem(24)
+		padding: rem(8) rem(0)
+		height: rem(116)
+	@media screen and ( max-width: 799px )
+		margin: rem(12) 0 rem(18)
+		padding: rem(8) rem(0)
+		height: rem(116)
+::placeholder
+	color: var(--border-color)
+	transition: 0.2s color
+
+.files
+	display: flex
+	flex-direction: column
+	align-items: flex-start
+	color: var(--text-white)
+	&--center
+		align-items: center
+	input[type=file]
+		position: absolute
+		width: 1px
+		height: 1px
+		opacity: 0
+		overflow: hidden
+	&__label
+		display: inline-flex
+		justify-content: flex-start
+		align-items: center
+		padding-right: rem(39)
+		height: rem(24)
+		background-image: var(--folder)
+		background-repeat: no-repeat
+		background-size: rem(24) rem(24)
+		background-position: 100% 50%
+		text-decoration: underline
+		cursor: pointer
+		&:hover
+			text-decoration: none
+	&__item
+		position: relative
+		display: none
+		margin-bottom: rem(10)
+		&--show
+			display: inline-block
+		&--filed
+			align-self: flex-start
+			label
+				background-image: none
+				pointer-events: none
+				text-decoration: none
+				&::after
+					content: attr(data-added)
+					display: inline-block
+					margin-left: rem(49)
+					padding-right: rem(26)
+					background-image: var(--check-gr)
+					background-size: rem(24) rem(24)
+					background-position: 100% center
+					background-repeat: no-repeat
+		&-name
+			max-width: rem(180)
+			overflow: hidden
+			text-overflow: ellipsis
+			white-space: nowrap
+			
+			
+	&__btn
+		//position: absolute
+		left: 0
+	&__del
+		position: absolute
+		display: none
+		top: 50%
+		transform: translateY(-50%)
+		left: calc(100% - 11.4rem)
+		font-size: 0
+		cursor: pointer
+		&::before, &::after
+			content: ""
+			position: absolute
+			top: 50%
+			left: 50%
+			height: rem(2)
+			width: 80%
+			background-color: #9C0D0D
+			//transition: 0.2s outline
+		&::before
+			transform: translate(-50%, -50%) rotate(45deg)
+		&::after
+			transform: translate(-50%, -50%) rotate(-45deg)
+		&:hover
+			&::before, &::after
+				outline: rem(0.5) solid #9C0D0D
+		@media screen and ( min-width: 100px )
+			width: rem(24)
+			height: rem(24)
+			
+
+.wpcf7-form-control-wrap
+	display: block
+
+.wpcf7
+	label
+		font-weight: 300
+	form
+.sbm-label-small
+	font-size: rem(16)
+
+.wpcf7-radio
+	position: relative
+	.wpcf7-list-item
+		position: relative
+		display: block
+		padding-left: rem(38)
+		@media screen and ( min-width: 700px )
+			font-size: rem(24)
+			
+	.wpcf7-list-item-label
+		&::before, &::after
+			content: ""
+			position: absolute
+			border-radius: 50%
+			top: rem(13)
+			left: rem(12)
+			transform: translate(-50%, -50%)
+		&::before
+			border: rem(2) solid currentColor
+			width: rem(25)
+			height: rem(25)
+		&::after
+			background-color: currentColor
+			width: rem(13)
+			height: rem(13)
+			transition: 0.2s opacity
+			opacity: 0
+	input
+		position: absolute
+		width: 1px
+		height: 1px
+		opacity: 0
+		&:checked~.wpcf7-list-item-label
+			&::after
+				opacity: 1
+		&:focus~.wpcf7-list-item-label
+			&::before
+				//box-shadow: inset 1px 1px 0 currentColor, inset -1px -1px 0 currentColor
+	
+
+
+.wpcf7-acceptance
+	.wpcf7-list-item-label
+		display: block
+		position: relative
+		font-size: rem(12)
+		font-weight: 300
+		line-height: calc(16 / 12)
+		transition: 0.2s outline
+		&::before, &::after
+			content: ""
+			position: absolute
+			top: rem(7)
+			left: rem(11)
+			transform: translate(-50%, -50%)
+			color: inherit
+		&::before
+			border: rem(1) solid currentColor
+			width: rem(19)
+			height: rem(19)
+		&::after
+			background-color: currentColor
+			width: rem(13)
+			height: rem(13)
+			transition: 0.2s opacity
+			opacity: 0
+	input
+		position: absolute
+		width: 1px
+		height: 1px
+		opacity: 0
+		&:checked~.wpcf7-list-item-label
+			&::after
+				opacity: 1
+		&:focus~.wpcf7-list-item-label
+			&::before
+				//box-shadow: inset 1px 1px 0 currentColor, inset -1px -1px 0 currentColor
+@media (min-width: 10px)
+	.wpcf7-acceptance
+		.wpcf7-list-item-label
+			padding-left: rem(35)

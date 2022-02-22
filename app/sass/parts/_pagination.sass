@@ -1,0 +1,26 @@
+.pagination
+    text-align: center
+    font-size: rem(0)
+    &__list
+        margin: rem(24) 0 
+    &__item
+        position: relative
+        display: inline-flex
+        justify-content: center
+        align-items: center
+        width: rem(32)
+        height: rem(32)
+        font-size: rem(16)
+        border: rem(1) solid #e0e0e0
+        margin-left: rem(-1)
+        transition: 0.4s border
+        text-decoration: none
+        &:hover, &:focus-visible
+            border-color: var(--main-accent)
+            z-index: 2
+        &--current
+            border-color: var(--main-accent)
+            background-color: var(--main-accent)
+            color: #ffffff
+            z-index: 0!important
+        

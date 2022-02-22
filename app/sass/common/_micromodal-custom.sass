@@ -1,0 +1,38 @@
+.modal
+	&__overlay
+		background: rgba(13, 18, 24, 0.1)
+		backdrop-filter: blur(10px)
+	&__close
+		path, rect, circle
+			transition: 0.2s fill
+		&:hover
+			path, rect, circle
+				fill: var(--main-accent)
+	&__content
+		color: inherit
+.video-popup
+
+	.modal
+		&__container
+			background-color: transparent
+			padding: 0
+			max-width: 100vw
+			width: rem(1653)
+			
+			max-width: 100vw
+			max-height: 100vh
+			overflow: auto
+
+			display: flex
+			align-items: center
+			//justify-content: center
+		&__content
+			margin: 0
+			width: 100%
+			
+	video
+		//width: rem(1653)!important
+		//height: rem(987)!important
+		max-width: 100vw
+		max-height: 100vh
+
